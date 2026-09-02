@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<defs>
+<linearGradient id="fg" x1="0%" y1="100%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#155e8c"/>
+<stop offset="45%" stop-color="#2fa8d4"/>
+<stop offset="100%" stop-color="#7fe3f0"/>
+</linearGradient>
+</defs>
+<rect width="64" height="64" rx="14" fill="#0d3b66"/>
+<g transform="translate(6,20) scale(0.173,0.173)">
+<!-- X -->
+<polygon points="4,4 36,4 112,124 80,124" fill="url(#fg)"/>
+<polygon points="80,4 112,4 36,124 4,124" fill="url(#fg)"/>
+<!-- N -->
+<polygon points="100,4 132,4 132,124 100,124" fill="url(#fg)"/>
+<polygon points="190,4 222,4 222,124 190,124" fill="url(#fg)"/>
+<polygon points="100,4 132,4 222,124 190,124" fill="url(#fg)"/>
+<!-- D -->
+<path fill-rule="evenodd" fill="url(#fg)" d="M 210,4 L 268,4 L 296,30 L 296,98 L 268,124 L 210,124 L 210,96 L 238,96 L 238,32 L 210,32 Z"/>
+</g>
+</svg>
