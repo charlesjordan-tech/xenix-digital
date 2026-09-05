@@ -58,18 +58,48 @@ document.addEventListener("DOMContentLoaded", () => {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  /* ---------- Contact form (static — no backend yet) ---------- */
+  /* ---------- Contact form (submits to Netlify Forms) ---------- */
   const form = document.getElementById("contact-form");
   if (form) {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
+
       const status = document.getElementById("form-status");
-      if (status) {
-        status.textContent =
-          "Thanks! This form is not yet connected to a backend — hook it up to Formspree, Netlify Forms, or your own API to start receiving messages. See the README for instructions.";
-        status.classList.add("show");
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const formData = new FormData(form);
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
       }
-      form.reset();
+
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      })
+        .then(() => {
+          if (status) {
+            status.textContent =
+              "Thanks! Your message has been sent — we'll get back to you soon.";
+            status.classList.add("show");
+          }
+          form.reset();
+        })
+        .catch(() => {
+          if (status) {
+            status.textContent =
+              "Something went wrong sending your message. Please try again, or reach us directly via WhatsApp or email.";
+            status.classList.add("show");
+          }
+        })
+        .finally(() => {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML =
+              'Send Message&nbsp;<i class="fa-solid fa-paper-plane"></i>';
+          }
+        });
     });
   }
 
