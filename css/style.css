@@ -397,7 +397,7 @@ p {
 }
 
 .brand span {
-  color: var(--primary-orange);
+  color: var(--primary-blue);
 }
 
 .brand-mark {
@@ -409,6 +409,34 @@ p {
 
 .footer-brand .brand-mark {
   height: 34px;
+}
+
+.site-header .brand {
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--primary-blue-deep);
+}
+
+.brand-name span {
+  color: var(--primary-orange);
+}
+
+.brand-slogan {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--gray);
 }
 
 .nav-links {
@@ -545,6 +573,30 @@ p {
   grid-template-columns: 1.1fr 0.9fr;
   gap: 48px;
   align-items: center;
+}
+
+.hero-brand {
+  margin-bottom: 24px;
+}
+
+.hero-brand-name {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.9rem, 4.2vw, 2.8rem);
+  color: var(--white);
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
+.hero-brand-slogan {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--light-orange);
+  letter-spacing: 0.01em;
 }
 
 .hero-copy .eyebrow {
@@ -1705,6 +1757,14 @@ h1, h2, h3, h4, p, a, span {
 
   .hero .container {
     gap: 18px;
+  }
+
+  .hero-brand {
+    margin-bottom: 18px;
+  }
+
+  .hero-brand-slogan {
+    font-size: 0.9rem;
   }
 
   .hero-copy h1 {
