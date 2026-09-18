@@ -220,11 +220,8 @@ p {
   font-size: 0.95rem;
   padding: 14px 26px;
   border-radius: 100px;
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition),
-    background var(--transition),
-    color var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition),
+    background var(--transition), color var(--transition);
   white-space: nowrap;
 }
 
@@ -363,10 +360,7 @@ p {
 .dot-grid {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(
-    rgba(13, 59, 102, 0.14) 1.4px,
-    transparent 1.4px
-  );
+  background-image: radial-gradient(rgba(13, 59, 102, 0.14) 1.4px, transparent 1.4px);
   background-size: 22px 22px;
   mask-image: radial-gradient(circle at 70% 30%, black, transparent 70%);
   pointer-events: none;
@@ -439,7 +433,7 @@ p {
 .brand-slogan {
   display: block;
   font-family: var(--font-body);
-  font-size: 0.5rem;
+  font-size: 0.50rem;
   font-weight: 600;
   letter-spacing: 0.03em;
   color: var(--gray);
@@ -503,9 +497,7 @@ p {
   height: 2px;
   background: var(--primary-blue-deep);
   border-radius: 2px;
-  transition:
-    transform var(--transition),
-    opacity var(--transition);
+  transition: transform var(--transition), opacity var(--transition);
 }
 
 .nav-toggle.open span:nth-child(1) {
@@ -534,9 +526,7 @@ p {
     transform: translateY(-12px);
     opacity: 0;
     visibility: hidden;
-    transition:
-      opacity var(--transition),
-      transform var(--transition),
+    transition: opacity var(--transition), transform var(--transition),
       visibility var(--transition);
     border-bottom: 1px solid var(--border);
     box-shadow: var(--shadow-md);
@@ -571,19 +561,33 @@ p {
 .hero {
   position: relative;
   padding: 88px 0 110px;
-  background-image:
-    linear-gradient(
+  color: var(--white);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  left: -24px;
+  right: -24px;
+  bottom: -24px;
+  background-image: linear-gradient(
       160deg,
-      rgba(8, 39, 68, 0.88) 0%,
-      rgba(13, 59, 102, 0.78) 55%,
-      rgba(18, 80, 127, 0.7) 100%
+      rgba(8, 39, 68, 0.92) 0%,
+      rgba(13, 59, 102, 0.85) 55%,
+      rgba(18, 80, 127, 0.8) 100%
     ),
     url("../assets/images/hero-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: var(--white);
-  overflow: hidden;
+  filter: blur(9px);
+  z-index: 0;
+}
+
+.hero .dot-grid {
+  z-index: 1;
 }
 
 .hero .container {
@@ -660,11 +664,7 @@ p {
   width: 230px;
   height: 230px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle at 35% 30%,
-    rgba(255, 122, 41, 0.9),
-    rgba(255, 122, 41, 0.05) 70%
-  );
+  background: radial-gradient(circle at 35% 30%, rgba(255, 122, 41, 0.9), rgba(255, 122, 41, 0.05) 70%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -727,11 +727,7 @@ p {
 .page-hero {
   position: relative;
   padding: 64px 0 76px;
-  background: linear-gradient(
-    160deg,
-    var(--primary-blue-deep),
-    var(--primary-blue)
-  );
+  background: linear-gradient(160deg, var(--primary-blue-deep), var(--primary-blue));
   color: var(--white);
   overflow: hidden;
 }
@@ -808,9 +804,7 @@ p {
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 32px 26px;
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition),
+  transition: transform var(--transition), box-shadow var(--transition),
     border-color var(--transition);
   position: relative;
 }
@@ -832,9 +826,7 @@ p {
   justify-content: center;
   font-size: 1.3rem;
   margin-bottom: 20px;
-  transition:
-    background var(--transition),
-    color var(--transition);
+  transition: background var(--transition), color var(--transition);
 }
 
 .card:hover .card-icon {
@@ -871,9 +863,7 @@ p {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .service-card:hover {
@@ -957,9 +947,7 @@ p {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .staff-card:hover {
@@ -1033,10 +1021,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition:
-    background var(--transition),
-    color var(--transition),
-    transform var(--transition);
+  transition: background var(--transition), color var(--transition), transform var(--transition);
   font-size: 0.85rem;
 }
 
@@ -1072,9 +1057,7 @@ p {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  transition:
-    transform var(--transition),
-    box-shadow var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .video-card:hover {
@@ -1129,11 +1112,7 @@ p {
 
 .cta-band {
   position: relative;
-  background: linear-gradient(
-    135deg,
-    var(--primary-orange),
-    var(--primary-orange-deep)
-  );
+  background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-deep));
   border-radius: var(--radius-lg);
   padding: 56px 48px;
   color: var(--white);
@@ -1331,10 +1310,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition:
-    background var(--transition),
-    color var(--transition),
-    transform var(--transition);
+  transition: background var(--transition), color var(--transition), transform var(--transition);
 }
 
 .social-row a:hover {
@@ -1413,9 +1389,7 @@ p {
   border: 1.5px solid var(--border);
   border-radius: var(--radius-sm);
   color: var(--dark);
-  transition:
-    border-color var(--transition),
-    box-shadow var(--transition);
+  transition: border-color var(--transition), box-shadow var(--transition);
   background: var(--white);
 }
 
@@ -1525,9 +1499,7 @@ p {
   align-items: center;
   justify-content: center;
   color: var(--white);
-  transition:
-    background var(--transition),
-    transform var(--transition);
+  transition: background var(--transition), transform var(--transition);
 }
 
 .footer-social a:hover {
@@ -1578,9 +1550,7 @@ p {
 .reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
 .reveal.in-view {
@@ -1639,13 +1609,7 @@ p {
   min-width: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-p,
-a,
-span {
+h1, h2, h3, h4, p, a, span {
   overflow-wrap: break-word;
 }
 
